@@ -60,17 +60,24 @@ public partial class MainWindow : Window
                 Console.WriteLine("Time to look up How to get the cookies creates");
                 Thread.Sleep(500);
 
-                var cookies  = dialog.TryGetCookieManager();
-                if(cookies == null)
+                var cookies = dialog.TryGetCookieManager();
+                if (cookies == null)
                 {
                     Console.WriteLine("Not surported");
                 }
             }
         };
 
-        var networkContext = WebKit.WebsiteDataManager.GetDefault();
+        // var networkContext = WebKit.WebsiteDataManager.GetDefault();
 
         InitializeComponent();
         dialog.Show();
+    }
+
+    private async void WebView_NavigationCompleted(object? sender, WebViewNavigationCompletedEventArgs args)
+    {
+        // Execute JavaScript
+        // await webView.InvokeScript("alert('Hello World')");
+        Console.WriteLine("Navigation Complete");
     }
 }
