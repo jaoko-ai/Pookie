@@ -9,5 +9,10 @@
         <TextBlock>
             Welcome to Avalonia!
         </TextBlock>
+
+        <TextBlock>
+            Webview
+        </TextBlock>
+        <NativeWebView Source="https://avaloniaui.net/" NavigationCompleted="WebView_NavigationCompleted" />
     </StackPanel>
 </Window>
